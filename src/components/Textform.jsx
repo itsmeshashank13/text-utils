@@ -29,17 +29,22 @@ export default function Textform(props) {
     setText(newText);
   };
 
+  const handleClearTextbox = ()=> {
+    let newText = "";
+    setText(newText);
+  };
+
   return (
     <>
       <div className="container">
-        <div className="row mb-3">
+        <div className="row">
           <div className="col">
             <label htmlFor="myBox" className="form-label">
               <h3>{props.heading}</h3>
             </label>
           </div>
           <div className="col-auto">
-            <button class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger" onClick={handleClearTextbox}>
               <span className="ms-auto">
                 Clear <MdDeleteForever />
               </span>
@@ -55,7 +60,7 @@ export default function Textform(props) {
           rows="8"
         />
       </div>
-      <button className="btn btn-primary" onClick={handleUppercaseClick}>
+      <button className="btn btn-primary mx-3 my-3" onClick={handleUppercaseClick}>
         Convert to Uppercase
       </button>
       <button className="btn btn-primary mx-3" onClick={handleLowercaseClick}>
@@ -65,7 +70,7 @@ export default function Textform(props) {
         Convert to SentenceCase
       </button>
       <div className="container my-3">
-        <h3>Your Text Summary</h3>
+        <h4>Your Text Summary</h4>
         <span className="mx-3">
           Number of Words: <b>{}</b>
         </span>
@@ -76,7 +81,7 @@ export default function Textform(props) {
         <span className="mx-3">
           Number of Characters (including spaces): <b>{text.length}</b>
         </span>
-        <h4>Preview</h4>
+        <h4 className="my-3">Preview</h4>
         <p>{text}</p>
       </div>
     </>
