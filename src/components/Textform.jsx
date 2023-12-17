@@ -30,9 +30,9 @@ export default function Textform(props) {
   };
 
   const handleClearTextbox = ()=> {
-    let newText = "";
-    setText(newText);
+    setText("");
   };
+
 
   return (
     <>
@@ -72,7 +72,7 @@ export default function Textform(props) {
       <div className="container my-3">
         <h4>Your Text Summary</h4>
         <span className="mx-3">
-          Number of Words: <b>{}</b>
+          Number of Words: <b>{text.split(/\s+/).length}</b>
         </span>
         <span className="mx-3">
           Number of Characters (without spaces):{" "}
