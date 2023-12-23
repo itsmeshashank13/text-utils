@@ -46,7 +46,7 @@ export default function Textform(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>
         <div className="row">
           <div className="col">
             <label htmlFor="myBox" className="form-label">
@@ -54,7 +54,7 @@ export default function Textform(props) {
             </label>
           </div>
           <div className="col-auto">
-            <button class="btn btn-outline-danger" onClick={handleClearTextbox}>
+            <button className="btn btn-outline-danger" onClick={handleClearTextbox}>
               <span className="ms-auto">
                 Clear <MdDeleteForever />
               </span>
@@ -65,6 +65,10 @@ export default function Textform(props) {
           className="form-control"
           value={text}
           onChange={handleOnChange}
+          style={{
+            backgroundColor: props.mode==='dark'?'grey':'white',
+            color: props.mode==='dark'?'white':'black'
+          }}
           id="myBox"
           placeholder="Your text goes here"
           rows="8"
@@ -85,7 +89,7 @@ export default function Textform(props) {
       <button className="btn btn-primary mx-3" onClick={handleExtraSpaces}>
         Remove Extra Spaces
       </button>
-      <div className="container my-3">
+      <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h4>Your Text Summary</h4>
         <span className="mx-3">
           Number of Words: <b>{text.split(/\s+/).length}</b>
