@@ -1,13 +1,15 @@
 import React from "react";
 
-function Alert() {
+function Alert(props) {
+  const capitalize = (word) => {
+    const lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
+
   return (
-    <div class="alert alert-success d-flex align-items-center" role="alert">
-      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-        <use xlink:href="#check-circle-fill" />
-      </svg>
-      <div>An example success alert with an icon</div>
-    </div>
+    props.alert && <div class={`alert alert-success alert-dismissible fade show`} role="alert">
+    {capitalize(props.alert.message)}
+  </div>
   );
 }
 
