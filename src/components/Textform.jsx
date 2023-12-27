@@ -84,11 +84,11 @@ export default function Textform(props) {
       <button className="btn btn-primary mx-3" onClick={handleCapitalizeClick}>
         Convert to SentenceCase
       </button>
-      <button className="btn btn-primary" onClick={handleCopy}>
-        Copy Text
-      </button>
-      <button className="btn btn-primary mx-3" onClick={handleExtraSpaces}>
+      <button className="btn btn-primary" onClick={handleExtraSpaces}>
         Remove Extra Spaces
+      </button>
+      <button className="btn btn-primary mx-3" onClick={handleCopy}>
+        Copy Text
       </button>
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h4>Your Text Summary</h4>
