@@ -93,7 +93,7 @@ export default function Textform(props) {
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h4>Your Text Summary</h4>
         <span className="mx-3">
-          Number of Words: <b>{text.split(/\s+/).length}</b>
+          Number of Words: <b>{text.split(" ").filter((element)=>{return element.length !== 0}).length}</b>
         </span>
         <span className="mx-3">
           Number of Characters (without spaces):{" "}
