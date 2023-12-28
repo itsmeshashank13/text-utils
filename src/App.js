@@ -59,12 +59,12 @@ function App() {
       <div className="container my-3" style={{ backgroundColor: customColor, color: "white"}}>
         <Routes>
           <Route 
-            path="/" 
+            exact path="/" 
             element={<Textform heading="Enter Text Below" showAlert={showAlert} mode={mode} customColor={customColor}/>}
           />
           <Route 
-            path="/about" 
-            element={<AboutUs />}
+            exact path="/about" 
+            element={<AboutUs customColor={customColor}/>}
           />    
         </Routes>
       </div>
