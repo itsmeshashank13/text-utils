@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 // import { toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
-// import AboutUs from './components/AboutUs';
+import AboutUs from './components/AboutUs';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
     }, 1200);
   }
 
-
+//**Previous code for switching between dark and light mode**//
   // const toggleMode = ()=> {
   //   if (mode === "light"){
   //     setMode('dark');
@@ -46,21 +48,27 @@ function App() {
     }
   };
 
-
   const handleColorChange = (newColor)=> {
     setCustomColor(newColor);
   };
 
-
   return (
-    <>
+    <Router>
       <Navbar title="Text Utility Tool" mode={mode} toggleMode={toggleMode} handleColorChange={handleColorChange}/>
       <Alert alert={alert} />
       <div className="container my-3" style={{ backgroundColor: customColor, color: "white"}}>
-        <Textform heading="Enter Text Below" showAlert={showAlert} mode={mode} customColor={customColor}/>
-        {/* <AboutUs /> */}
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Textform heading="Enter Text Below" showAlert={showAlert} mode={mode} customColor={customColor}/>}
+          />
+          <Route 
+            path="/about" 
+            element={<AboutUs />}
+          />    
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
