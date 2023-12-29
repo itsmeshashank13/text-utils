@@ -47,7 +47,7 @@ export default function Textform(props) {
 
   return (
     <>
-      <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>
+      <div className="container" style={{color: props.mode === 'dark'?'white':'black'}}>
         <div className="row">
           <div className="col">
             <label htmlFor="myBox" className="form-label">
@@ -56,9 +56,7 @@ export default function Textform(props) {
           </div>
           <div className="col-auto">
             <button className="btn btn-outline-danger" onClick={handleClearTextbox}>
-              <span className="ms-auto">
                 Clear <MdDeleteForever />
-              </span>
             </button>
           </div>
         </div>
@@ -75,19 +73,19 @@ export default function Textform(props) {
           rows="8"
         />
       </div>
-      <button className="btn btn-primary mx-3 my-3" onClick={handleUppercaseClick}>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleUppercaseClick}>
         Convert to Uppercase
       </button>
-      <button className="btn btn-primary" onClick={handleLowercaseClick}>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleLowercaseClick}>
         Convert to Lowercase
       </button>
-      <button className="btn btn-primary mx-3" onClick={handleCapitalizeClick}>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleCapitalizeClick}>
         Convert to SentenceCase
       </button>
-      <button className="btn btn-primary" onClick={handleExtraSpaces}>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>
         Remove Extra Spaces
       </button>
-      <button className="btn btn-primary mx-3" onClick={handleCopy}>
+      <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>
         Copy Text
       </button>
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
